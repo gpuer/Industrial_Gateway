@@ -7,7 +7,7 @@
   "license": "MIT",
   "homepage": "https://vite-starter.element-plus.org",
   "repository": {
-    "url": "https://www.baidu.com"
+    "url": "https://github.com/gpuer/Industrial_Gateway"
   },
   "scripts": {
     "dev": "vite",
