@@ -1,0 +1,33 @@
+server:
+  port: 8083
+spring:
+  profiles:
+    active: dev
+  web:
+    resources:
+      static-locations: classpath:/static/,file:static/
+# 日志配置
+logging:
+  level:
+    com.cyxx: debug
+  file:
+    name: log/spring.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 7
+
+scheduler:
+  plc-collect-delay-ms: 300000
+  redis-query-delay-ms: 150000
+
+mybatis-plus:
+  type-aliases-package: com.cyxx.plcgateway
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  # 加载全局的配置文件
+  config-location: classpath:/mybatis/mybatis-config.xml
+  global-config:
+    db-config:
+      logic-delete-field: del_flag # 全局逻辑删除字段名
+      logic-delete-value: 2 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czmz.plcgateway.mapper.CommonMapper">
+    <select id="getIotGateways" resultType="com.cyxx.plcgateway.model.entry.IotGatewayEntry">
+        SELECT id,
+               "name",
+               host,
+               port,
+               rack,
+               slot,
+               slave_id,
+               type
+        FROM iot_gateway;
+    </select>
+
+
+    <select id="getIotDevices" resultType="com.cyxx.plcgateway.model.entry.IotDeviceEntry">
+        SELECT id,
+               device_name,
+               sn,
+               "offset",
+               len,
+               template_name,
+               gateway_name,
+               db
+        FROM iot_device WHERE gateway_name = #{gatewayName};
+    </select>
+    <select id="getTemplate" resultType="com.cyxx.plcgateway.model.entry.IotTemplateEntry">
+
+    select id,
+           field_name,
+           type,
+           length,
+           scale,
+           word_swap,
+           byte_swap,
+           "offset",
+           template_name
+    FROM iot_device_template WHERE  template_name = #{templateName}
+
+    </select>
+
+
+</mapper>
