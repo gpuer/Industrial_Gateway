@@ -68,6 +68,7 @@ yarn dev
 如果这个项目对你有帮助，可以请我喝杯咖啡 ❤️
 
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="img.png" width="250" height="250" alt="微信支付">
-  <img src="img_1.png" width="250" height="250" alt="支付宝支付">
+    <img src="img.png" width="250" height="250" alt="微信好友">
+    <img src="img_1.png" width="250" height="250" alt="微信支付">
+    <img src="img_5.png" width="250" height="250" alt="支付宝支付">
 </div>
